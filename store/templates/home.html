@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% if request.user.is_authenticated %}
+{% block title %}{{ request.user.username }}{% endblock %}
+{% else %}
+{% block title %}Home{% endblock %}
+{% endif %
+{% block content %}
+{% if request.user.is_authenticated %}
+<!// dashboard information here>
+{% else %}
+<!// home page information here>
+{% endif %}
+{%  endblock %}

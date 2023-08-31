@@ -1,0 +1,17 @@
+<doctype html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        {% if request.user.is_authenticated %}
+        <!// nav bar for logged in users>
+        {% else %}
+        <!// nav bar for non logged in users>
+        {% endif %}
+        {% block content %} {% endblock %}
+<!// footer>
+    
+    </body>
+        </html>
+    

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<!-- styles -->
+<style>
+    .login-form {
+        width: 100%;
+        max-width: 30rem;
+    }
+    .login-form input:not(:last-child) {
+        margin-bottom: .5rem;
+        padding: 0.5rem;
+    }
+    .login-form label {
+        display: none;
+    }
+    @media (max-width: 480px) {
+        .login-form,
+        .login-form input {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+<!-- end of styles -->
+<div class="container mh80 flex-column justify-content-center align-items-center d-flex" style="padding-top: 56px;">
+    <form class="login-form p-4 d-flex flex-column bg-success rounded shadow" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+        <input type="submit" class="btn btn-light text-success font-weight-bold fz-sm d-block w-50" value="Login" />
+    </form>
+    <div class="info-box">
+        <p class="helptext d-flex gap-2">Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+    </div>
+</div>
+
+{% endblock %}
