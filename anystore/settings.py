@@ -135,3 +135,17 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = 'support@anystoreweb.com'
+
+LOGIN_URL = "/account/login/"
+LOGIN_REDIRECT_URL = "/"
+
+LOGOUT_URL = "/account/logout/"
+LOGOUT_REDIRECT_URL = "/account/login/"
+
+
+# mail configuration for admin and developers in django at the production level to get the error logs
+ADMINS = (
+    ('Admin', 'eritten2@gmail.com', 'imprezbookkeeping@gmail.com', 'adm@niveel.com'),
+)
+MANAGERS = ADMINS
+

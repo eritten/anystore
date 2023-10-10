@@ -1,13 +1,18 @@
 {% extends "base.html" %}
+{% block title %}
 {% if request.user.is_authenticated %}
-{% block title %}{{ request.user.username }}{% endblock %}
+{{ request.user.username }}
 {% else %}
-{% block title %}Home{% endblock %}
-{% endif %
+Anystore - Home
+{% endif %}
+{% endblock %}
 {% block content %}
 {% if request.user.is_authenticated %}
-<!// dashboard information here>
+<p>
+    Welcome {{ request.user.username }}!
+</p>
 {% else %}
-<!// home page information here>
+{% comment %} nav bar using bootstrap. it should contain home link, about, register, and login. it should be drop down and mobile responsive. {% endcomment %}
+
 {% endif %}
 {%  endblock %}

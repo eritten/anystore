@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm, ProfileForm
 import requests
 from django.conf import settings
@@ -27,8 +27,8 @@ def signup(request):
             user.save()
             messages.success(request, 'Account created successfully')
             return redirect('login')
-        return render(request, 'signup.html', {'form': form})
-    return render(request, 'signup.html', {'form': form})
+        return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form})
 
 # user profile
 def profile(request):
@@ -44,4 +44,24 @@ def profile(request):
             return redirect('profile')
         return render(request, 'profile.html', {'form': form})
     return render(request, 'profile.html', {'form': form})
+
+
+
+def privacy(request):
+    return render(request, "privacy.html")
+def terms(request):
+    return render(request, "terms.html")
+
+
+# function base base view to make user account not active using is_active attribute
+def deactivate(request):
+    user = request.user
+    user.email_user(f"{user.username.capitalize()}, your account has been disabled", """We  are sorry to see you go! \r Please email us any questions/concerns you may have at below email: support@anystoreweb.com. Kind regards, 
+                    
+                    Anystore Team. \r
+                    https://www.anystoreweb.com \r You can also download it from Play Store and App Store.""")
+    user.is_active = False
+    user.save()
+    messages.success(request, 'Account deactivated successfully')
+    return redirect('login')
 

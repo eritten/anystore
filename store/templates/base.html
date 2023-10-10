@@ -1,17 +1,125 @@
+{% load static %}
 <doctype html>
     <head>
         <title>{% block title %} {% endblock %}</title>
         <meta charset="utf-8">
+   
+   <!-- bootstrap cdn links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <! bootstrap js links>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         {% if request.user.is_authenticated %}
-        <!// nav bar for logged in users>
+        <!-- create nav bar for logged in users it should contain username, home link, settings, , logout, change password, update profile, favourite tab. it should contain search input without form tab ajax will be used for the request. qrcode button, bar code button, voice input button use bootstrap -->
+
+        <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" id="search">
+                      <div class="input-group-btn">
+                          <button class="btn btn-default" id="textinput">Voice input</button>
+                          </button>
+<button id="barcode">Scan barcode</button> 
+                          <button class="btn btn-default" id="qrcode">Scan qrcode</button
+
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+{% comment %} creating nav bar that contains logout, home, {% endcomment %}
+<nav class="navbar navbar-default">
+
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Anystore</a>
+        </div>  
+
+
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'deactivate' %}">deactivate account</a></li>
+         
+        </ul>
+    </div>
+</nav>
+<video id="preview"></video>
         {% else %}
         <!// nav bar for non logged in users>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Anystore</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="{% url 'signup' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+        
         {% endif %}
         {% block content %} {% endblock %}
-<!// footer>
-    
+<!// footer fotter which contains info links and also follow us links like facebook, twitter, instagram using bootstrap-->
+
+<footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Anystore</h5>
+          <p>Here you can find all the products you need.</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">About</a>
+            </li>
+            <li>
+              <a href="#!">Contact</a>
+            </li>
+            <li>
+              <a href="#!">Help</a>
+            </li>
+            <li>
+              <a href="#!">Terms and Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h5 class="text-uppercase">Follow Us</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Facebook</a>
+            </li>
+            <li>
+              <a href="#!">Twitter</a>
+            </li>
+            <li>
+              <a href="#!">Instagram</a>
+            </li>
+            <li>
+              <a href="#!">Google+</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>     
+
+
     </body>
         </html>
     
