@@ -1,3 +1,5 @@
+
+
 var SpeechRecognition = new (window.SpeechRecognition || window.webkitSpeechRecognition
     || window.mozSpeechRecognition || window.msSpeechRecognition)();
 
@@ -14,8 +16,6 @@ var SpeechRecognition = new (window.SpeechRecognition || window.webkitSpeechReco
    SpeechRecognition.onend = function(){
        SpeechRecognition.stop();
    };
-
-
 
 
 
@@ -65,4 +65,5 @@ barcode.addEventListener('click', function(event){
         console.error(e);
     });
 })
+
 
