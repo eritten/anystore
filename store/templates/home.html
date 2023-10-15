@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
 {% if request.user.is_authenticated %}
 {{ request.user.username }} 
@@ -7,12 +8,152 @@ Anystore - Home
 {% endif %}
 {% endblock %}
 {% block content %}
+
+
 {% if request.user.is_authenticated %}
 <p>
     Welcome {{ request.user.username }}!
 </p>
-{% else %}
-{% comment %} nav bar using bootstrap. it should contain home link, about, register, and login. it should be drop down and mobile responsive. {% endcomment %}
+<!-- tabs for logged in users -->
+<ul class="nav nav-tabs bg-danger" id="nav-1" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab1" data-toggle="tab" href="#home1" role="tab" aria-controls="home1" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab1" data-toggle="tab" href="#profile1" role="tab" aria-controls="profile1" aria-selected="false">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="favorite-tab1" data-toggle="tab" href="#favorite1" role="tab" aria-controls="favorite1" aria-selected="false">Favorites</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="radar-tab1" data-toggle="tab" href="#radar1" role="tab" aria-controls="radar1" aria-selected="false">Radar</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="nav-content1">
+    <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab1">
+        <!-- home 1 tab content -->
+        <!-- search navbar -->
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline d-flex" style="display: inline-block; width: 100%; gap: 1rem;">
+              <input class="form-control mr-sm-2 w-50 search-input" type="search" placeholder="Search" aria-label="Search item">
 
+              <button class="search-btn tooltip-use btn btn-outline-warning my-2 my-sm-0" aria-label="search button" data-toggle="tooltip" data-placement="top" title="search button">
+                <i class="fas fa-search"></i>
+              </button>
+
+              <button id="textinput" class="tooltip-use btn btn-outline-warning my-2 my-sm-0" aria-label="Voice input" data-toggle="tooltip" data-placement="top" title="Voice input">
+                  <i class="fas fa-microphone"></i>
+                </button>
+
+                <button id="barcode" class="btn btn-outline-warning my-2 my-sm-0" aria-label="Scan barcode" data-toggle="tooltip" data-placement="top" title="barcode Scan">
+                    <i class="fas fa-barcode"></i>
+                </button> 
+
+                <button id="qrcode" class="btn btn-outline-warning my-2 my-sm-0" aria-label="Scan qr code" data-toggle="tooltip" data-placement="top" title="qr code Scan">
+                <i class="fas fa-qrcode"></i>
+                </button>
+            </form>
+          </nav>
+        <!-- end of search navbar -->
+        <!-- end of home 1 tab content -->
+    </div>
+    <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut reprehenderit accusamus repellat neque in dolores facilis voluptatibus error rerum excepturi expedita, sint accusantium voluptate voluptas debitis! Quibusdam, dolorum eos!
+    </div>
+    <div class="tab-pane fade" id="favorite1" role="tabpanel" aria-labelledby="favorite-tab1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, inventore obcaecati nihil ullam suscipit cumque doloremque facere, repudiandae illum expedita earum dolor voluptate maiores laboriosam odit dolores esse quae odio.
+    </div>
+    <div class="tab-pane fade" id="radar1" role="tabpanel" aria-labelledby="radar-tab1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam magnam deserunt aspernatur repudiandae fugiat ex voluptas, iure soluta quae id animi. Saepe aut cum, tenetur tempore unde eligendi sed asperiores.
+    </div>
+  </div>
+<!-- end of tabs for logged in users -->
+
+{% else %}
+
+<!-- tabs for NOT logged in users -->
+<!-- tab links -->
+<ul class="nav nav-tabs m-2" id="nav-2" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="about-tab2" data-toggle="tab" href="#about2" role="tab" aria-controls="about2" aria-selected="true">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="favorite-tab2" data-toggle="tab" href="#favorite2" role="tab" aria-controls="contact" aria-selected="false">Favorites</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="radar-tab2" data-toggle="tab" href="#radar2" role="tab" aria-controls="contact" aria-selected="false">Radar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">Login</a>
+    </li>
+  </ul>
+<!-- end of tab links -->
+<!-- tab content -->
+  <div class="tab-content m-2" id="nav-content2">
+    <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab2">
+        <!-- home section -->
+        
+        <!-- end of home section -->
+    </div>
+    <div class="tab-pane fade show" id="about2" role="tabpanel" aria-labelledby="about-tab2">
+        <!-- about section -->
+        <!-- end of about section -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil animi cum ut quia quis eius adipisci nesciunt accusamus, vero natus consequatur quo architecto assumenda! Doloremque, facilis? Minima, tempore! Saepe, eligendi?
+    </div>
+    <div class="tab-pane fade hey" id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut reprehenderit accusamus repellat neque in dolores facilis voluptatibus error rerum excepturi expedita, sint accusantium voluptate voluptas debitis! Quibusdam, dolorum eos!
+    </div>
+    <div class="tab-pane fade hey" id="favorite2" role="tabpanel" aria-labelledby="favorite-tab2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, inventore obcaecati nihil ullam suscipit cumque doloremque facere, repudiandae illum expedita earum dolor voluptate maiores laboriosam odit dolores esse quae odio.
+    </div>
+    <div class="tab-pane fade" id="radar2" role="tabpanel" aria-labelledby="radar-tab2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam magnam deserunt aspernatur repudiandae fugiat ex voluptas, iure soluta quae id animi. Saepe aut cum, tenetur tempore unde eligendi sed asperiores.
+    </div>
+    <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa numquam, accusamus saepe nobis provident quibusdam ab, nihil inventore pariatur iste ducimus ex tempora libero, recusandae suscipit illo eos mollitia quae.
+    </div>
+  </div>
+<!-- end of tab content -->
+<!-- end of tabs for NOT logged in users -->
+<!-- booking section -->
+<section class="book" id="book">
+    <div class="title">
+        <span data-aos="zoom-out-up">s</span>
+        <span data-aos="zoom-out-up" data-aos-delay="200">h</span>
+        <span data-aos="zoom-out-up" data-aos-delay="300">o</span>
+        <span data-aos="zoom-out-up" data-aos-delay="400">p</span>
+        &nbsp;
+        <span data-aos="zoom-out-up" data-aos-delay="500">n</span>
+        <span data-aos="zoom-out-up" data-aos-delay="600">o</span>
+        <span data-aos="zoom-out-up" data-aos-delay="700">w</span>
+    </div>
+    <div class="section-wrapper">
+        <div class="booking-wrapper">
+            <div class="img-box" data-aos="fade-left">
+                <img src="{% static 'img/shop-now.jpg' %}" alt="shopping bag image">
+            </div>
+            <div class="booking-form" data-aos="fade-right">
+                <!-- <form action="#">
+                    <label for="place-name">where to</label>
+                    <input type="text" placeholder="place name" id="place-name">
+                    <label for="num-of-guests">how many</label>
+                    <input type="text" placeholder="number of guests" id="num-of-guests">
+                    <label for="arrive-date">arrivals</label>
+                    <input type="date" id="arrive-date">
+                    <label for="leaving-date">leaving</label>
+                    <input type="date" id="leaving-date">
+                    <a href="#" class="all-btns">book now</a>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of booking -->
 {% endif %}
 {%  endblock %}

@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <meta name="description" content="Anystore is an online store where you can find all the products you need.">
     </head>
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -13,149 +13,7 @@
     <script src="{% static 'js/all.js' %}"></script>
 
     <body>
-
-       <!-- header and nav -->
-    <header>
-      <!-- navbar when user is authenticated -->
-      {% if request.user.is_authenticated %}
-      <nav>
-        <div class="nav-wrapper">
-            <div class="logo-box">
-                <img src="img/logos/2.jpg" alt="">
-            </div>
-            <ul class="nav-list">
-                <li>
-                    <a href="#" class="highlight">home</a>
-                </li>
-                <li>
-                    <a href="#book">Book</a>
-                </li>
-                <li>
-                    <a href="#packages">packages</a>
-                </li>
-                <li>
-                    <a href="#services">services</a>
-                </li>
-                <li>
-                    <a href="#gallery">gallery</a>
-                </li>
-                <li>
-                    <a href="#review">review</a>
-                </li>
-                <li class="mr-3">
-                    <a href="#contact">contact</a>
-                </li>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                  </button>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#n">logout</a>
-                    <a class="dropdown-item" href="#n">deactivate Account</a>
-                  </div>
-                </div>
-            </ul>
-            <!-- icons box -->
-            <div class="icon-box">
-              <button class="search-btn" aria-label="search button" data-toggle="tooltip" data-placement="top" title="search button">
-                <i class="fas fa-search"></i>
-              </button>
-              <button id="textinput" class="tooltip-use" aria-label="Voice input" data-toggle="tooltip" data-placement="top" title="Voice input">
-                <i class="fas fa-microphone"></i>
-              </button>
-              <button id="barcode" aria-label="Scan barcode" data-toggle="tooltip" data-placement="top" title="barcode Scan">
-                <i class="fas fa-barcode"></i>
-              </button> 
-              <button id="qrcode" aria-label="Scan qr code" data-toggle="tooltip" data-placement="top" title="qr code Scan">
-                <i class="fas fa-qrcode"></i>
-              </button>
-              <button class="menu-btn" aria-label="mobile navigation menu" data-toggle="tooltip" data-placement="top">
-                  <i class="fas fa-bars"></i>
-              </button>
-            </div>
-            <!-- end of icons box -->
-        </div>
-          <!-- search bar -->
-          <form action="#" class="search-form">
-            <input type="search" placeholder="search">
-            <button class="search-btn-submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-        <!-- end of search bar -->
-    </nav>
-      <!-- end of navbar when user is authenticated -->
-      {% else %}
-      <!-- navbar when user is not authenticated -->
-      <nav>
-        <div class="nav-wrapper">
-            <div class="logo-box">
-                <img src="img/logos/2.jpg" alt="">
-            </div>
-            <ul class="nav-list">
-                <li>
-                    <a href="#" class="highlight">home</a>
-                </li>
-                <li>
-                    <a href="#book">Book</a>
-                </li>
-                <li>
-                    <a href="#packages">packages</a>
-                </li>
-                <li>
-                    <a href="#services">services</a>
-                </li>
-                <li>
-                    <a href="#gallery">gallery</a>
-                </li>
-                <li>
-                    <a href="#review">review</a>
-                </li>
-                <li class="mr-3">
-                    <a href="#contact">contact</a>
-                </li>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                  </button>
-                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{% url 'signup' %}">register</a>
-                    <a class="dropdown-item" href="{% url 'login' %}">login</a>
-                  </div>
-                </div>
-            </ul>
-            <!-- icons box -->
-            <div class="icon-box">
-              <button class="menu-btn" aria-label="mobile navigation menu">
-                  <i class="fas fa-bars"></i>
-              </button>
-            </div>
-            <!-- end of icons box -->
-        </div>
-          <!-- search bar -->
-          <form action="#" class="search-form">
-            <input type="search" placeholder="search">
-            <button class="search-btn-submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-        <!-- end of search bar -->
-    </nav>
-    {% endif %}
     {% block content %} {% endblock %}
-      <!-- end of navbar when user is not authenticated -->
-      <!-- header content -->
-      <div class="header-text-box" data-aos="zoom-out-up">
-          <h1>discover the world around you</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, deserunt?</p>
-          <a href="#" class="all-btns">read more</a>
-      </div>
-      <!-- end of header content -->
-      <video src="{% static 'img/header.mp4' %}" autoplay muted loop></video>
-  </header>
-  <!-- end of header and nav -->
-
-  <video id="preview"></video>
   
 
 <!-- <!// footer which contains info links and also follow us links like facebook, twitter, instagram using bootstrap  -->
