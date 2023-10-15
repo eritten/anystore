@@ -5,7 +5,6 @@
     --alt-clr: #F8D112;
     --alt-clr-opac: rgba(248, 209, 18,.4);
     --Txt-bg-Clr: #fff;
-    --black-1: #333;
     --black-2: #444;
     --border: .1rem solid rgba(255,255,255,.2);
     --box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
@@ -32,7 +31,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-transform: capitalize;
 }
 ul {
     padding: 0;
@@ -121,14 +119,15 @@ section .title {
     max-width: 100%;
     text-align: center;
     gap: .5rem;
+    text-transform: uppercase;
 }
 section .title span {
-    width: 5rem!important;
+    width: 4rem!important;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     background: rgba(255, 165, 0,.3);
     border-radius: 6px;
-    color: var(--alt-clr);
+    color: var(--sec-Clr);
 }
 /* end of reusable */
 body {
@@ -137,7 +136,61 @@ body {
     color: var(--bodyColor);
     font-size: 1.8em;
 }
-
+.tab-content {
+    min-height: 100dvh;
+}
+.nav-tabs li {
+    background-color: var(--sec-Clr);
+}
+.nav-tabs li a {
+    color: var(--alt-clr);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+}
+/* header */
+header {
+    width: 100%;
+    height: calc(100dvh - 40px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 6px;
+    padding: 2rem;
+    width: 100%;
+    
+}
+header .header-content h1 {
+    font-size: 3.5rem;
+    color: var(--alt-clr);
+    margin-bottom: 1rem;
+    max-width: 55rem;
+    margin: 0 auto;
+}
+header .header-content p {
+    font-size: 1.8rem;
+    color: var(--Txt-bg-Clr);
+    margin-bottom: 1rem;
+    max-width: 65rem;
+    margin: 0 auto;
+    font-weight: bold;
+}
+/* end of header */
 /* booking section */
 .book .booking-wrapper {
     display: flex;
@@ -147,7 +200,7 @@ body {
 }
 .book .booking-wrapper .img-box {
     width: 48%;
-    min-height: 40rem;
+    min-height: 30rem;
     position: relative;
     height: 100%;
 }
@@ -161,32 +214,18 @@ body {
 }
 .book .booking-wrapper .booking-form {
     width: 48%;
+    min-height: 30rem;
     box-shadow: var(--box-shadow);
     padding: 2rem 1rem;
     border-radius: 5px;
 }
-.book .booking-wrapper .booking-form form {
-    display: flex;
-    flex-direction: column;
-}
-.book .booking-wrapper .booking-form form input {
-    margin-bottom: 1rem;
-    width: 100%;
-    border: 1px solid rgba(102, 102, 102,.5);
-    outline: none;
-    padding: 1rem;
-}
-.book .booking-wrapper .booking-form form label {
-    font-size: 2rem;
-    color: var(--black-2);
+.book .booking-wrapper .booking-form h2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--sec-Clr);
     font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-.book .booking-wrapper .booking-form form a {
-    display: block;
-    width: 45%;
-    white-space: nowrap;
     text-align: center;
+    font-size: 2.2rem!important;
 }
 /* media query for booking section */
 @media (max-width: 768px) {
@@ -199,6 +238,7 @@ body {
     .book .booking-wrapper .booking-form {
         width: 100%;
         padding: 2rem;
+        text-align: center;
     }
 }
 /* end of media query for booking section */
@@ -279,7 +319,18 @@ body {
     margin-bottom: 1rem;
 }
 .services .service-text-wrapper .service-box h4 {
+    font-size: 2rem;
+    color: var(--sec-Clr);
+}
+.services .service-text-wrapper .service-box .service-icon {
     font-size: 2.3rem;
+    color: var(--alt-clr);
+}
+.services .service-text-wrapper .service-box p {
+    font-size: 1.6rem;
+    height: 15rem;
+    overflow-y: auto;
+    margin-bottom: 0;
 }
 /* end of services section */
 /* gallery section */
@@ -464,7 +515,7 @@ body {
 /* end of contact section */
 /* footer */
 footer {
-    background: var(--black-1);
+    background: var(--main-clr);
     color: var(--Txt-bg-Clr);
 }
 footer .footer-info-wrapper {

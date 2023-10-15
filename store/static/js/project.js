@@ -9,6 +9,9 @@ AOS.init({
     anchorPlacement: 'top-bottom'
 })
 
+const footerDate = document.querySelector('#date')
+const date = new Date()
+footerDate.innerHTML = date.getFullYear()
 
 
 

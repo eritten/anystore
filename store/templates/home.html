@@ -97,9 +97,94 @@ Anystore - Home
 <!-- tab content -->
   <div class="tab-content m-2" id="nav-content2">
     <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab2">
-        <!-- home section -->
-        
-        <!-- end of home section -->
+        <!-- header -->
+        <header>
+            <video src="{% static 'img/header.mp4' %}" autoplay muted loop></video>
+            <div class="header-content">
+                <h1>Welcome to Anystore.</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam nobis incidunt error officia, dolores delectus obcaecati! Dolor dicta consectetur odio repellendus at aperiam temporibus non, fugit obcaecati nesciunt autem molestiae.</p>
+            </div>
+        </header>
+        <!-- end of header -->
+       <!-- hero section -->
+       <section class="book" id="book">
+        <div class="title">
+            <span data-aos="zoom-out-up">s</span>
+            <span data-aos="zoom-out-up" data-aos-delay="200">h</span>
+            <span data-aos="zoom-out-up" data-aos-delay="300">o</span>
+            <span data-aos="zoom-out-up" data-aos-delay="400">p</span>
+            &nbsp;
+            <span data-aos="zoom-out-up" data-aos-delay="500">n</span>
+            <span data-aos="zoom-out-up" data-aos-delay="600">o</span>
+            <span data-aos="zoom-out-up" data-aos-delay="700">w</span>
+        </div>
+        <div class="section-wrapper">
+            <div class="booking-wrapper">
+                <div class="img-box" data-aos="fade-left">
+                    <img src="{% static 'img/shop-now.jpg' %}" alt="shopping bag image">
+                </div>
+                <div class="booking-form" data-aos="fade-right">
+                    <!-- put random text about shopping in its own div with about 3 paragraphs -->
+                    <div class="text">
+                        <!-- h2 with title -->
+                        <h2>Shop Now</h2>
+                        <p>Lorem ip sum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                    </div>
+             </div>
+            </div>
+        </div>
+    </section>
+       <!-- end of hero section -->
+       <!-- services -->
+    <section class="services" id="services">
+        <div class="title">
+            <span data-aos="zoom-out-up" data-aos-delay="100">s</span>
+            <span data-aos="zoom-out-up" data-aos-delay="200">e</span>
+            <span data-aos="zoom-out-up" data-aos-delay="300">r</span>
+            <span data-aos="zoom-out-up" data-aos-delay="400">v</span>
+            <span data-aos="zoom-out-up" data-aos-delay="500">i</span>
+            <span data-aos="zoom-out-up" data-aos-delay="600">c</span>
+            <span data-aos="zoom-out-up" data-aos-delay="700">e</span>
+            <span data-aos="zoom-out-up" data-aos-delay="800">s</span>
+        </div>
+        <div class="section-wrapper">
+            <div class="service-text-wrapper">
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-boxes"></i>
+                    <h4>affordable products</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque autem necessitatibus totam soluta expedita, quis, veritatis cupiditate animi minus at illum?</p>
+                </div>
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-utensils"></i>
+                    <h4>food and drinks</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque autem necessitatibus totam soluta expedita.</p>
+                </div>
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-bullhorn"></i>
+                    <h4>safty guide</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque autem necessitatibus totam soluta expedita, quis, veritatis cupiditate animi minus at illum?</p>
+                </div>
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-globe"></i>
+                    <h4>anything around the world</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque autem necessitatibus totam soluta expedita, quis, veritatis cupiditate animi minus at illum? .</p>
+                </div>
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-plane"></i>
+                    <h4>fas service-icont</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, atque autem necessitatibus totam soluta expedita</p>
+                </div>
+                <div class="service-box" data-aos="fade-up">
+                    <i class="fas service-icon fa-bookmark"></i>
+                    <h4>favorite shops</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of services -->
     </div>
     <div class="tab-pane fade show" id="about2" role="tabpanel" aria-labelledby="about-tab2">
         <!-- about section -->
@@ -121,39 +206,6 @@ Anystore - Home
   </div>
 <!-- end of tab content -->
 <!-- end of tabs for NOT logged in users -->
-<!-- booking section -->
-<section class="book" id="book">
-    <div class="title">
-        <span data-aos="zoom-out-up">s</span>
-        <span data-aos="zoom-out-up" data-aos-delay="200">h</span>
-        <span data-aos="zoom-out-up" data-aos-delay="300">o</span>
-        <span data-aos="zoom-out-up" data-aos-delay="400">p</span>
-        &nbsp;
-        <span data-aos="zoom-out-up" data-aos-delay="500">n</span>
-        <span data-aos="zoom-out-up" data-aos-delay="600">o</span>
-        <span data-aos="zoom-out-up" data-aos-delay="700">w</span>
-    </div>
-    <div class="section-wrapper">
-        <div class="booking-wrapper">
-            <div class="img-box" data-aos="fade-left">
-                <img src="{% static 'img/shop-now.jpg' %}" alt="shopping bag image">
-            </div>
-            <div class="booking-form" data-aos="fade-right">
-                <!-- <form action="#">
-                    <label for="place-name">where to</label>
-                    <input type="text" placeholder="place name" id="place-name">
-                    <label for="num-of-guests">how many</label>
-                    <input type="text" placeholder="number of guests" id="num-of-guests">
-                    <label for="arrive-date">arrivals</label>
-                    <input type="date" id="arrive-date">
-                    <label for="leaving-date">leaving</label>
-                    <input type="date" id="leaving-date">
-                    <a href="#" class="all-btns">book now</a>
-                </form> -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end of booking -->
+
 {% endif %}
 {%  endblock %}

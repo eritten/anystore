@@ -14,56 +14,57 @@
 
     <body>
     {% block content %} {% endblock %}
-  
-
-<!-- <!// footer which contains info links and also follow us links like facebook, twitter, instagram using bootstrap  -->
-
-<footer class="page-footer font-small blue pt-4">
-    <div class="container-fluid text-center text-md-left">
-      <div class="row">
-        <div class="col-md-6 mt-md-0 mt-3">
-          <h5 class="text-uppercase">Anystore</h5>
-          <p>Here you can find all the products you need.</p>
+   <!-- footer -->
+   <footer>
+    <div class="footer-wrapper">
+        <div class="footer-info-wrapper">
+            <div class="about-box">
+                <h2>Anystore</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias nihil tenetur nesciunt totam cum.</p>
+            </div>
+            <div class="branch-box">
+                <h2>branch locations</h2>
+            <ul>
+                <li>Accra</li>
+                <li>Central</li>
+                <li>legon</li>
+                <li>lapaz</li>
+            </ul>
         </div>
-        <hr class="clearfix w-100 d-md-none pb-3">
-        <div class="col-md-3 mb-md-0 mb-3">
-          <h5 class="text-uppercase">Links</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">About</a>
-            </li>
-            <li>
-              <a href="#!">Contact</a>
-            </li>
-            <li>
-              <a href="#!">Help</a>
-            </li>
-            <li>
-              <a href="#!">Terms and Conditions</a>
-            </li>
-          </ul>
+        <div class="quick-links-box">
+            <h2>quick links</h2>
+            <ul>
+                <li>
+                    <a href="#">help</a>
+                </li>
+                <li>
+                    <a href="#book">terms and conditions</a>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-3 mb-md-0 mb-3">
-          <h5 class="text-uppercase">Follow Us</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Facebook</a>
-            </li>
-            <li>
-              <a href="#!">Twitter</a>
-            </li>
-            <li>
-              <a href="#!">Instagram</a>
-            </li>
-            <li>
-              <a href="#!">Google+</a>
-            </li>
-          </ul>
+        <div class="follow-us-box">
+            <h2>follow us</h2>
+            <ul>
+                <li>
+                    <a href="#n">facebook</a>
+                </li>
+                <li>
+                    <a href="#n">instagram</a>
+                </li>
+                <li>
+                    <a href="#n">twitter</a>
+                </li>
+                <li>
+                    <a href="#n">linkedin</a>
+                </li>
+            </ul>
         </div>
-      </div>
+        </div>
+        <hr class="mt-0 mb-0" style="border: 1px solid; border-top: 1px solid rgba(0,0,0,.1);">
+        <p class="outro">&copy; Copyright <span>Anystore </span> <span class="text-white" id="date"></span> | all rights reserved!</p>
     </div>
-  </footer>
-  <!-- Footer -->
+</footer>
+<!-- end of footer -->
   <script src="{% static 'js/jquery.min.js' %}"></script>
 
   <script src="{% static 'js/aos.js' %}"></script>
